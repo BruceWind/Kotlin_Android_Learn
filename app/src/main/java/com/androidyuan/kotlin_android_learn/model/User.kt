@@ -6,18 +6,17 @@ package com.androidyuan.kotlin_android_learn.model
  * ======测试java转kotlin=========
  */
 
-class User {
+class User(name:String,age:Int) {
 
-    var name: String = ""
+    var name = name
 
-    var age: Int = 0
+    var age = age
 
 //    fun isOld():Boolean{
 //        return age>10
 //    }
 
 }
-
 
 /*
 

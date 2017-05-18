@@ -2,9 +2,7 @@ package com.androidyuan.kotlin_android_learn
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.KeyEvent
 import android.view.View
-import android.view.ViewGroup
 
 import com.androidyuan.kotlin_android_learn.core.CoreLogger
 import com.androidyuan.kotlin_android_learn.model.User
@@ -18,9 +16,10 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val user = User()
-        user.age = 20
-        user.name = "wei"
+        val user:User = User("wei",18)
+        d(user.name)
+//        user.age = 20
+//        user.name = "wei"
 
         message.text = "被kotlin设置的TextView."
 
@@ -36,8 +35,6 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener {
             d("被点击viewId:"+ v.id)
         }
     }
-
-
 
 
     fun d(name: String) {
