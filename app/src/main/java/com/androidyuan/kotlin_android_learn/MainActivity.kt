@@ -3,6 +3,7 @@ package com.androidyuan.kotlin_android_learn
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.androidyuan.aesjni.AESEncrypt
 
 import com.androidyuan.kotlin_android_learn.core.CoreLogger
 import com.androidyuan.kotlin_android_learn.model.User
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener {
         message.text = "被kotlin设置的TextView."
 
         message.setOnClickListener(this)
-
+        AESEncrypt.checkSignature(this)
 
     }
 
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener {
     override fun onClick(v: View?) {
 
         if(v!=null) {
-            d("被点击viewId:"+ v.id)
+            d("加密结果: "+AESEncrypt.encode(this,"asd"))
         }
     }
 
