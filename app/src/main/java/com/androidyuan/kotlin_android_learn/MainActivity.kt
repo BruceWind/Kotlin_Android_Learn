@@ -48,10 +48,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             CoreLogger.getLogger("MainActivityXXXX").d(forecastJsonStr)
 
             uiThread { toast("请求成功。") }
+
         }
 
 
         KotlinFPMain.main()
+        DATACLSTest.test()
     }
 
 
