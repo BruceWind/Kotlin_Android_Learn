@@ -92,7 +92,7 @@ class CoreLogger {
          * 因为主项目的 BuildConfig类名肯定是可以动态获取的
          */
         fun initDebugConfig(context: Context) {
-            var cls: Class<*>? = null
+            var cls: Class<*>? = this.javaClass
             try {
                 //动态获取BuildConfig
                 CoreLogger()

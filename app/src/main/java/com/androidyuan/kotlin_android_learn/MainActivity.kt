@@ -2,8 +2,12 @@ package com.androidyuan.kotlin_android_learn
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.View
+import android.widget.Toast
 import com.androidyuan.aesjni.AESEncrypt
+import com.androidyuan.kotlin_android_learn.adapter.MainAdapter
 
 import com.androidyuan.kotlin_android_learn.core.CoreLogger
 import com.androidyuan.kotlin_android_learn.model.User
@@ -27,19 +31,28 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener {
         message.setOnClickListener(this)
         AESEncrypt.checkSignature(this)
 
+
+        forecast_list.layoutManager = LinearLayoutManager(this) as RecyclerView.LayoutManager?
+
+        forecast_list.adapter = MainAdapter(this)
+
     }
 
 
     override fun onClick(v: View?) {
 
         if(v!=null) {
-            d("加密结果: "+AESEncrypt.encode(this,"asd"))
+            toast("加密结果: "+AESEncrypt.encode(this,"asd"))
         }
     }
 
 
     fun d(name: String) {
         CoreLogger.getLogger("MainActivityXXXX").d(name)
+    }
+
+    fun toast(title :String = "UNKNOW",length:Int = Toast.LENGTH_SHORT){
+        Toast.makeText(this,title,length).show()
     }
 
 }
