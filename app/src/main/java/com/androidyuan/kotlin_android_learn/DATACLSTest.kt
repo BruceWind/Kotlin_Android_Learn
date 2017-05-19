@@ -27,8 +27,8 @@ class DATACLSTest {
 
             //测试 取出字段
             val (name:String,age:Int) = copyData
-            logger.d(" field name = "+name)
-            logger.d(" field age = "+age)
+            logger.d(" field name :$name")//kotlin的String模版
+            logger.d(" field age :$age")
 
         }
     }
