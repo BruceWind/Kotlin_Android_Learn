@@ -36,6 +36,8 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener {
 
         forecast_list.adapter = MainAdapter(this)
 
+
+        KotlinFPMain.main()
     }
 
 

@@ -9,3 +9,6 @@
 
 4.kotlin项目编译加速
 
+5.kotlin函数式编程
+
+6.kotlin使用Support库下面的RecyclerView
