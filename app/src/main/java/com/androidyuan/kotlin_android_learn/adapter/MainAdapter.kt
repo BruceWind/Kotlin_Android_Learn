@@ -7,15 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.androidyuan.kotlin_android_learn.R
+import org.jetbrains.anko.find
 import org.w3c.dom.Text
 
 /**
  * Created by wei on 17-5-19.
  * =============kotlin adapter=====================
  */
-class MainAdapter(con:Context) : RecyclerView.Adapter<MainAdapter.MainVH>() {
+class MainAdapter(con: Context) : RecyclerView.Adapter<MainAdapter.MainVH>() {
 
-    val context: Context= con
+    val context: Context = con
 
 
     override fun getItemCount(): Int {
@@ -23,8 +24,8 @@ class MainAdapter(con:Context) : RecyclerView.Adapter<MainAdapter.MainVH>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): MainVH {
-        val view : View= LayoutInflater.from(context).inflate(R.layout.item_mainlist,null)
-        val vh : MainVH= MainVH(view)
+        val view: View = LayoutInflater.from(context).inflate(R.layout.item_mainlist, null)
+        val vh: MainVH = MainVH(view)
         return vh
     }
 
@@ -36,6 +37,6 @@ class MainAdapter(con:Context) : RecyclerView.Adapter<MainAdapter.MainVH>() {
 
 
     class MainVH(itemView: View?) : RecyclerView.ViewHolder(itemView) {
-        val title : TextView = itemView!!.findViewById(R.id.title) as TextView
+        val title: TextView = itemView!!.find(R.id.title)
     }
 }

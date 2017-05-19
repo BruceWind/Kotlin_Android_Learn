@@ -12,3 +12,8 @@
 5.kotlin函数式编程
 
 6.kotlin使用Support库下面的RecyclerView
+
+7.导入anko库,使用anko扩展函数(在一个类上增加一种新的行为) 
+
+8.anko 异步操作 线程切换
+
