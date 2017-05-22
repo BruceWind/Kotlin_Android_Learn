@@ -11,6 +11,7 @@ import com.androidyuan.kotlin_android_learn.adapter.MainAdapter
 
 import com.androidyuan.kotlin_android_learn.core.CoreLogger
 import com.androidyuan.kotlin_android_learn.model.User
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.custom.async
@@ -37,9 +38,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
         forecast_list.layoutManager = LinearLayoutManager(this) as RecyclerView.LayoutManager
-
         forecast_list.adapter = MainAdapter(this)
-
 
 
         async(Executors.newSingleThreadExecutor()) {//线程
@@ -54,6 +53,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         KotlinFPMain.main()
         DATACLSTest.test()
+
     }
 
 
