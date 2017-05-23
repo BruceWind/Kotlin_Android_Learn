@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Toast
 import com.androidyuan.aesjni.AESEncrypt
 import com.androidyuan.kotlin_android_learn.adapter.MainAdapter
+import com.androidyuan.kotlin_android_learn.adapter.MainAdapterClickListener
 
 import com.androidyuan.kotlin_android_learn.core.CoreLogger
 import com.androidyuan.kotlin_android_learn.model.User
@@ -38,7 +39,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
         forecast_list.layoutManager = LinearLayoutManager(this) as RecyclerView.LayoutManager
-        forecast_list.adapter = MainAdapter(this)
+        forecast_list.adapter = MainAdapter(this,object :MainAdapterClickListener{
+            override fun invoke(index: Int) {
+                toast("click:"+index)
+            }
+
+        })
 
 
         async(Executors.newSingleThreadExecutor()) {//线程

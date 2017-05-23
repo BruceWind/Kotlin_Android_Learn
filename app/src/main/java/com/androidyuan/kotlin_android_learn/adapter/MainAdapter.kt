@@ -14,9 +14,10 @@ import org.w3c.dom.Text
  * Created by wei on 17-5-19.
  * =============kotlin adapter=====================
  */
-class MainAdapter(con: Context) : RecyclerView.Adapter<MainAdapter.MainVH>() {
+class MainAdapter(con: Context,itemtListener:MainAdapterClickListener) : RecyclerView.Adapter<MainAdapter.MainVH>() {
 
     val context: Context = con
+    val mItemListener = itemtListener
 
 
     override fun getItemCount(): Int {
@@ -33,6 +34,9 @@ class MainAdapter(con: Context) : RecyclerView.Adapter<MainAdapter.MainVH>() {
 
         val txt = holder!!.title
         txt.text = "test xx"
+        holder.itemView.setOnClickListener{
+            mItemListener(position)
+        }
     }
 
 
