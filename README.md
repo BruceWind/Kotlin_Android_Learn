@@ -20,3 +20,7 @@
 9.dataclass
 
 10.操作符重载
+
+11.application单例
+
+12.从Map中映射值来定义一个类
