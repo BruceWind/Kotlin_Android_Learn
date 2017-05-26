@@ -58,6 +58,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
         KotlinFPMain.main()
+        FunctionOperatorTest.main()
         DATACLSTest.test()
 
     }
