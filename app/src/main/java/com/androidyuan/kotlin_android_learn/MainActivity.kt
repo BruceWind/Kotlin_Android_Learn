@@ -5,18 +5,15 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
-import android.widget.Toast
 import com.androidyuan.aesjni.AESEncrypt
 import com.androidyuan.kotlin_android_learn.adapter.MainAdapter
 import com.androidyuan.kotlin_android_learn.adapter.MainAdapterClickListener
 
 import com.androidyuan.kotlin_android_learn.core.CoreLogger
 import com.androidyuan.kotlin_android_learn.model.User
-import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.custom.async
-import java.lang.Exception
 import java.net.URL
 import java.util.concurrent.Executors
 
@@ -32,9 +29,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 //        user.age = 20
 //        user.name = "wei"
 
-        message.text = "被kotlin设置的TextView."
+        start_act.text = "TextView可以被点击."
 
-        message.setOnClickListener(this)
+        start_act.setOnClickListener(this)
         AESEncrypt.checkSignature(this)
 
 
@@ -60,6 +57,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         KotlinFPMain.main()
         FunctionOperatorTest.main()
         DATACLSTest.test()
+        WhenIFTest.main()
 
     }
 
@@ -69,7 +67,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         if (v != null) {
             //use anko
             toast("加密结果: " + AESEncrypt.encode(this, "asd"))
-            //longToast("加密结果: "+AESEncrypt.encode(this,"asd"))// anko
+
+            startActivity<Main2Activity>("sads" to 1)//测试kotlin跳转传参数
         }
     }
 

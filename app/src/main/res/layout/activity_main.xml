@@ -8,10 +8,11 @@
     tools:context="com.androidyuan.kotlin_android_learn.MainActivity">
 
     <TextView
-        android:id="@+id/message"
+        android:id="@+id/start_act"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:padding="15dp"
+        android:text="启动新的activity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -22,13 +23,10 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/forecast_list"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="495dp"
-        tools:layout_editor_absoluteY="16dp"
-        android:layout_marginRight="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="0dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintHorizontal_bias="0.0"/>
 
