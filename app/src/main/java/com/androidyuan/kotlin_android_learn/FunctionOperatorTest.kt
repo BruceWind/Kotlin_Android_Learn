@@ -46,6 +46,7 @@ class FunctionOperatorTest {
             //映射操作符
             log.d("flatMap:"+list.flatMap { listOf(it, it + 1) })
             log.d("mapNotNull: "+  list.mapNotNull { it * 2 })
+            //生产操作符
             log.d("unzip: "+listOf(Pair(5, 7), Pair(6, 8)).unzip())
         }
     }
