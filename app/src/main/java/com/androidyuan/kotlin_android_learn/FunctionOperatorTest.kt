@@ -35,15 +35,18 @@ class FunctionOperatorTest {
 
             log.d("sum:"+ list.sum())
             log.d("sumby:"+ list.sumBy{ it % 2})
+
             //过滤操作符
             log.d("take:"+ list.take(3).toString())
             log.d("filter:"+list.filter { it> 3 }.toString())
             log.d("drop:"+list.drop(2).toString())
             log.d("dropWhile:"+list.dropLastWhile { it % 2 == 0 })
+
+
             //映射操作符
-
-
-
+            log.d("flatMap:"+list.flatMap { listOf(it, it + 1) })
+            log.d("mapNotNull: "+  list.mapNotNull { it * 2 })
+            log.d("unzip: "+listOf(Pair(5, 7), Pair(6, 8)).unzip())
         }
     }
 
